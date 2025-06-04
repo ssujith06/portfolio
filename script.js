@@ -8,17 +8,14 @@ function cancel(){
 }
 
 // for Typewriter effect
-
 const texts = [
-    "DEVELOPER",
-    "YOUTUBER",
-    "DESIGNER"
+    "DATA SCIENCE STUDENT",
+    "MACHINE LEARNING ENTHUSIAST",
+    "PYTHON PROGRAMMER"
 ]
 
 let speed = 100;
-
 const textElements = document.querySelector(".typewriter-text")
-
 let textIndex = 0;
 let charcterIndex = 0;
 
@@ -27,8 +24,7 @@ function typeWriter() {
         textElements.innerHTML += texts[textIndex].charAt(charcterIndex);
         charcterIndex++;
         setTimeout(typeWriter, speed); 
-    }
-    else{
+    } else {
         setTimeout(eraseText, 1000)
     }
 }
@@ -37,8 +33,7 @@ function eraseText() {
     if(textElements.innerHTML.length > 0){
         textElements.innerHTML = textElements.innerHTML.slice(0,-1)
         setTimeout(eraseText, 50)
-    }
-    else{
+    } else {
         textIndex = (textIndex + 1) % texts.length;
         charcterIndex = 0;
         setTimeout(typeWriter,500)
